@@ -10,7 +10,7 @@ export default function AnimalTable(props){
     },[]);
 
     const generateRandomAnimal = () =>{
-        randomIndex = Math.floor(Math.random() * 10) + 1;
+        const randomIndex = Math.floor(Math.random() * 10) + 1;
         setRandomAnimal(animals[randomIndex]);
         setResult('');
     }
