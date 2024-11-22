@@ -15,5 +15,14 @@ export default function AnimalTable(props){
         setResult('');
     }
 
+    const handleAnimalClick=(selectedAnimal)=>{
+        if(selectedAnimal === randomAnimal.name){
+            setResult('WIN');
+        }
+        else{
+            setResult('LOSE');
+        }
+    }
+
     return();
 }
