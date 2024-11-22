@@ -1,8 +1,9 @@
-import React,{ useState,useEffect } from 'react';
+import React,{ useEffect,useState } from 'react';
 import { animals } from '../assests/data/AnimalsDb';
 import '../assests/css/compo.css';
 
-export default function AnimalTable(){
+export default function AnimalTable(props){
+
     const [randomAnimal,setRandomAnimal] = useState(null);
     const [result,setResult] = useState('');
     useEffect(()=>{
@@ -22,11 +23,19 @@ export default function AnimalTable(){
         else{
             setResult('LOSE');
         }
+
+        setTimeout(()=>{
+            generateRandomAnimal();
+        }, 1000);
+    }
+
+    if (!randomAnimal) {
+        return <div className="loading">Loading</div>;
     }
 
     return(
-        <div>
-            <table>
+        <div classname="gameContainer">
+            <table className="game_table">
                 <thead>
                     <tr>
                         <th colSpan={3}><h1>ANIMAL MATCHING GAME</h1></th>
@@ -39,15 +48,15 @@ export default function AnimalTable(){
                 </thead>
                 <tbody>
                     <tr>
-                        <td><h3>{result}</h3></td>
-                        <td><h3>{randomAnimal.name.toUpperCase()}</h3></td>
-                        <td>
+                        <td className="result_col" width="10%"><h3>{result}</h3></td>
+                        <td className="animalname_col" width="20%"><h3>{randomAnimal.name.toUpperCase()}</h3></td>
+                        <td className="animalgrid_col" width="70%">
                             <div>
-                                <div>
+                                <div className="animalgrid">
                                     {
                                         animals.map((animal)=>(
-                                         <div key={animal.name} onClick={()=>handleAnimalClick(animal.name)}>
-                                            <img src={require(`../assests/img/${animal.img}`)} alt= {animal.name}/>
+                                         <div key={animal.name} className="animalgrid_item"onClick={()=>handleAnimalClick(animal.name)}>
+                                            <img src={require(`../assests/img/${animal.img}`)} alt= {animal.name} className="animal_image"/>
                                          </div>   
                                         ))
                                     }
