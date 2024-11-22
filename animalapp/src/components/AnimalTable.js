@@ -39,7 +39,7 @@ function AnimalTable(props){
             <table className="game_table" border='10px'>
                 <thead>
                     <tr>
-                        <th colSpan="3"><h1>ANIMAL MATCHING GAME</h1></th>
+                        <th colSpan="3"><h2>ANIMAL MATCHING GAME</h2></th>
                     </tr>
                     <tr>
                         <th><h2>Result</h2></th>
