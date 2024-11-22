@@ -2,7 +2,7 @@ import React,{ useState,useEffect } from 'react';
 import { animals } from '../assests/data/AnimalsDb';
 import '../assests/css/compo.css';
 
-export default function AnimalTable(props){
+export default function AnimalTable(){
     const [randomAnimal,setRandomAnimal] = useState(null);
     const [result,setResult] = useState('');
     useEffect(()=>{
@@ -25,8 +25,8 @@ export default function AnimalTable(props){
     }
 
     return(
-        <div className="gameContainer">
-            <table className="game_table">
+        <div>
+            <table>
                 <thead>
                     <tr>
                         <th colSpan={3}><h1>ANIMAL MATCHING GAME</h1></th>
@@ -59,4 +59,5 @@ export default function AnimalTable(props){
             </table>
         </div>
     );
+    
 }
