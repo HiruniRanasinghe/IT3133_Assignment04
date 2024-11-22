@@ -1,6 +1,6 @@
 import React,{ useState,useEffect } from 'react';
 import { animals } from '../assests/data/AnimalsDb';
-import '../assests/css/compo.csss';
+import '../assests/css/compo.css';
 
 export default function AnimalTable(props){
     const [randomAnimal,setRandomAnimal] = useState(null);
